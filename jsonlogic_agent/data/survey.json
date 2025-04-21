@@ -1,0 +1,449 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "metadata": {
+                "type": "object",
+                "properties": {
+                    "responseId": {
+                        "type": "string"
+                    },
+                    "completedAt": {
+                        "type": "string"
+                    },
+                    "device": {
+                        "type": "string"
+                    },
+                    "browser": {
+                        "type": "string"
+                    },
+                    "timeSpent": {
+                        "type": "number"
+                    }
+                }
+            },
+            "customerInfo": {
+                "type": "object",
+                "properties": {
+                    "customerId": {
+                        "type": "string"
+                    },
+                    "age": {
+                        "type": "number"
+                    },
+                    "gender": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "isSubscriber": {
+                        "type": "boolean"
+                    },
+                    "purchaseFrequency": {
+                        "type": "string"
+                    },
+                    "firstPurchaseDate": {
+                        "type": "string"
+                    }
+                }
+            },
+            "questions": {
+                "type": "object",
+                "properties": {
+                    "productUsage": {
+                        "type": "object",
+                        "properties": {
+                            "usageFrequency": {
+                                "type": "object",
+                                "description": "How often the user engages with the product",
+                                "properties": {
+                                    "response": {
+                                        "type": "string",
+                                        "enum": [
+                                            "never",
+                                            "rarely",
+                                            "sometimes",
+                                            "often",
+                                            "always",
+                                            "daily",
+                                            "multiple times daily"
+                                        ]
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "usageContext": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "string",
+                                        "enum": [
+                                            "personal",
+                                            "professional",
+                                            "educational",
+                                            "other"
+                                        ]
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "usageDuration": {
+                                "type": "object",
+                                "description": "How long the user has been using the product",
+                                "properties": {
+                                    "response": {
+                                        "type": "string",
+                                        "enum": [
+                                            "less than 1 month",
+                                            "1-3 months",
+                                            "3-6 months",
+                                            "6-12 months",
+                                            "more than 1 year"
+                                        ]
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "completedOnboarding": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "boolean"
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "abandonedFeatures": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "satisfaction": {
+                        "type": "object",
+                        "properties": {
+                            "overallSatisfaction": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "number",
+                                        "minimum": 1,
+                                        "maximum": 5
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "easeOfUse": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "number",
+                                        "minimum": 1,
+                                        "maximum": 5
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "features": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "number",
+                                        "minimum": 1,
+                                        "maximum": 5
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "valueForMoney": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "number",
+                                        "minimum": 1,
+                                        "maximum": 5
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "likeliestFeature": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "string",
+                                        "enum": [
+                                            "dashboard",
+                                            "reporting",
+                                            "automation",
+                                            "sharing",
+                                            "integration",
+                                            "collaboration",
+                                            "none"
+                                        ]
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "painPoints": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "wouldRecommend": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "boolean"
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "npsScore": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "number",
+                                        "minimum": 0,
+                                        "maximum": 10
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "feedback": {
+                        "type": "object",
+                        "properties": {
+                            "improvementSuggestions": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "string"
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "missingFeatures": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "string"
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "competitorComparison": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "string"
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "contactForFollowUp": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "boolean"
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "participateInUserResearch": {
+                                "type": "object",
+                                "properties": {
+                                    "response": {
+                                        "type": "boolean"
+                                    },
+                                    "skipped": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "sample_data": {
+        "primary": {
+            "metadata": {
+                "responseId": "R_2023_05467",
+                "completedAt": "2023-09-15T14:32:45Z",
+                "device": "desktop",
+                "browser": "chrome",
+                "timeSpent": 483
+            },
+            "customerInfo": {
+                "customerId": "CUST-10589",
+                "age": 34,
+                "gender": "female",
+                "email": "laura.zhang@example.com",
+                "isSubscriber": true,
+                "purchaseFrequency": "monthly",
+                "firstPurchaseDate": "2022-03-10"
+            },
+            "questions": {
+                "productUsage": {
+                    "usageFrequency": {
+                        "response": "daily",
+                        "skipped": false
+                    },
+                    "usageContext": {
+                        "response": "professional",
+                        "skipped": false
+                    },
+                    "usageDuration": {
+                        "response": "6-12 months",
+                        "skipped": false
+                    },
+                    "completedOnboarding": {
+                        "response": true,
+                        "skipped": false
+                    },
+                    "abandonedFeatures": {
+                        "response": [
+                            "advanced_analytics"
+                        ],
+                        "skipped": false
+                    }
+                },
+                "satisfaction": {
+                    "overallSatisfaction": {
+                        "response": 4,
+                        "skipped": false
+                    },
+                    "easeOfUse": {
+                        "response": 5,
+                        "skipped": false
+                    },
+                    "features": {
+                        "response": 4,
+                        "skipped": false
+                    },
+                    "valueForMoney": {
+                        "response": 3,
+                        "skipped": false
+                    },
+                    "likeliestFeature": {
+                        "response": "dashboard",
+                        "skipped": false
+                    },
+                    "painPoints": {
+                        "response": [
+                            "export_options",
+                            "mobile_experience"
+                        ],
+                        "skipped": false
+                    },
+                    "wouldRecommend": {
+                        "response": true,
+                        "skipped": false
+                    },
+                    "npsScore": {
+                        "response": 9,
+                        "skipped": false
+                    }
+                },
+                "feedback": {
+                    "improvementSuggestions": {
+                        "response": "Please improve the mobile experience and add more export options.",
+                        "skipped": false
+                    },
+                    "missingFeatures": {
+                        "response": "Would love to see better integration with calendar apps.",
+                        "skipped": false
+                    },
+                    "competitorComparison": {
+                        "response": "Better interface than competitors but missing some advanced features.",
+                        "skipped": false
+                    },
+                    "contactForFollowUp": {
+                        "response": true,
+                        "skipped": false
+                    },
+                    "participateInUserResearch": {
+                        "response": true,
+                        "skipped": false
+                    }
+                }
+            }
+        }
+    },
+    "descriptions": [
+        "Find highly satisfied customers (overall satisfaction of 4 or 5) who use the product daily",
+        "Find responses from mobile devices where the user reported pain points related to mobile experience",
+        "Find customers who would recommend the product but rated value for money as 3 or lower",
+        "Find customers who have been using the product for more than 6 months and want to participate in user research",
+        "Find customers who are not subscribers but gave an NPS score of 8 or higher",
+        "Find responses where the user skipped at least one question",
+        "Find customers who completed the survey in less than 5 minutes (300 seconds) and reported at least one pain point",
+        "Find customers who reported missing features related to integration or API access",
+        "Find customers who use the product professionally and mention competitors in their feedback"
+    ],
+    "expected_results": {
+        "primary": {
+            "Find highly satisfied customers (overall satisfaction of 4 or 5) who use the product daily": true,
+            "Find responses from mobile devices where the user reported pain points related to mobile experience": false,
+            "Find customers who would recommend the product but rated value for money as 3 or lower": true,
+            "Find customers who have been using the product for more than 6 months and want to participate in user research": true,
+            "Find customers who are not subscribers but gave an NPS score of 8 or higher": false,
+            "Find responses where the user skipped at least one question": false,
+            "Find customers who completed the survey in less than 5 minutes (300 seconds) and reported at least one pain point": false,
+            "Find customers who reported missing features related to integration or API access": true,
+            "Find customers who use the product professionally and mention competitors in their feedback": true
+        }
+    }
+}

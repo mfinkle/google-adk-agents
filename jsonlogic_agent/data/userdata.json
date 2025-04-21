@@ -1,0 +1,119 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "user": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "age": {
+                        "type": "number"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "isActive": {
+                        "type": "boolean"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "address": {
+                        "type": "object",
+                        "properties": {
+                            "city": {
+                                "type": "string"
+                            },
+                            "country": {
+                                "type": "string"
+                            },
+                            "zipCode": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "subscription": {
+                "type": "object",
+                "properties": {
+                    "plan": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "number"
+                    },
+                    "startDate": {
+                        "type": "string"
+                    },
+                    "isActive": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "lastLogin": {
+                "type": "string"
+            },
+            "loginCount": {
+                "type": "number"
+            }
+        }
+    },
+    "sample_data": {
+        "primary" : {
+            "user": {
+                "name": "John Doe",
+                "age": 35,
+                "email": "john@example.com",
+                "isActive": true,
+                "tags": [
+                    "developer",
+                    "premium",
+                    "beta"
+                ],
+                "address": {
+                    "city": "New York",
+                    "country": "US",
+                    "zipCode": "10001"
+                }
+            },
+            "subscription": {
+                "plan": "premium",
+                "price": 99.99,
+                "startDate": "2023-01-15",
+                "isActive": true
+            },
+            "lastLogin": "2024-04-10T14:30:00Z",
+            "loginCount": 42
+        }
+    },
+    "descriptions": [
+        "Find active users over 30 years old",
+        "Find users between 25 and 40 years old",
+        "Find users from the US with an active premium subscription",
+        "Find users with a subscription price between 50 and 100 dollars inclusive",
+        "Find users with no tags",
+        "Find users who have at least one tag",
+        "Find users where second tag is 'premium'",
+        "Find users who have the tag 'beta'",
+        "Find users who logged in more than 5 times and have the tag 'developer'"
+    ],
+    "expected_results": {
+        "primary": {
+            "Find active users over 30 years old": true,
+            "Find users between 25 and 40 years old": true,
+            "Find users from the US with an active premium subscription": true,
+            "Find users with a subscription price between 50 and 100 dollars inclusive": true,
+            "Find users with no tags": false,
+            "Find users who have at least one tag": true,
+            "Find users where second tag is 'premium'": true,
+            "Find users who have the tag 'beta'": true,
+            "Find users who logged in more than 5 times and have the tag 'developer'": true
+        }
+    }
+}
